@@ -104,28 +104,31 @@ class Alas
 
 class Aeroplano
 {
-    private  helice: Helice ;
-    private  trenAterrizaje:TrendeAterrizaje;
-    private  alas: Alas ;
-    private  cubierta:Cubierta ;
+     private  helice: Helice ;
+     private  trenAterrizaje:TrendeAterrizaje;
+     private  alas: Alas ;
+     private  cubierta:Cubierta ;
+     private  turbina:Turbina;
 
-    constructor( phelice:Helice,  pTrenAterrizaje:TrendeAterrizaje,  pAlas:Alas,  pCubierta:Cubierta)
-    {
-         this.helice = phelice;
-         this.trenAterrizaje = pTrenAterrizaje;
-         this.alas = pAlas;
-         this.cubierta = pCubierta;
-    }
-    public  ToString()
-    {
-        let mensaje = "Aeroplano compuesto por: ";
-        mensaje += this.helice.ToString();
-        mensaje += this.alas.ToString();
-        mensaje += this.trenAterrizaje.ToString();
-        mensaje += this.cubierta.ToString();
-        return mensaje;
+     constructor( phelice:Helice,  pTrenAterrizaje:TrendeAterrizaje,  pAlas:Alas,  pCubierta:Cubierta)
+     {
+          this.helice = phelice;
+          this.trenAterrizaje = pTrenAterrizaje;
+          this.alas = pAlas;
+          this.cubierta = pCubierta;
+          this.turbina = new Turbina(4);
+     }
+     public  ToString()
+     {
+         let mensaje = "Aeroplano compuesto por: ";
+         mensaje += this.helice.ToString();
+         mensaje += this.alas.ToString();
+         mensaje += this.trenAterrizaje.ToString();
+         mensaje += this.cubierta.ToString();
+         mensaje += this.turbina.ToString();
+         return mensaje;
 
-    }
+     }
 }
 
 let  helice: Helice = new Helice(3);

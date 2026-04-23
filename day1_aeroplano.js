@@ -80,11 +80,13 @@ class Aeroplano {
     trenAterrizaje;
     alas;
     cubierta;
+    turbina;
     constructor(phelice, pTrenAterrizaje, pAlas, pCubierta) {
         this.helice = phelice;
         this.trenAterrizaje = pTrenAterrizaje;
         this.alas = pAlas;
         this.cubierta = pCubierta;
+        this.turbina = new Turbina(4);
     }
     ToString() {
         let mensaje = "Aeroplano compuesto por: ";
@@ -92,6 +94,7 @@ class Aeroplano {
         mensaje += this.alas.ToString();
         mensaje += this.trenAterrizaje.ToString();
         mensaje += this.cubierta.ToString();
+        mensaje += this.turbina.ToString();
         return mensaje;
     }
 }
